@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/AOEListFirstFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/AOEListFirstFragment"
         android:name="com.example.projet_mobile.presentation.list.AOEListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_aoe_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/Navigate_To_AOE_Civ_Detail"
+            app:destination="@id/AOE_Civ_Detail" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/AOE_Civ_Detail"
         android:name="com.example.projet_mobile.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/Navigate_To_AOEListFirstFragment"
+            app:destination="@id/AOEListFirstFragment" />
     </fragment>
 </navigation>

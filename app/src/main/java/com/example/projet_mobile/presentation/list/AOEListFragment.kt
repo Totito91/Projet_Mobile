@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projet_mobile.R
@@ -22,7 +23,11 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 class AOEListFragment : Fragment() {
     private lateinit var recyclerView : RecyclerView
-    private val adapter = AOE_Adapter(listOf())
+    private val adapter = AOE_Adapter(listOf(), ::onClickedCivilization)
+
+
+
+
     private val layoutManager = LinearLayoutManager(context)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -68,5 +73,8 @@ class AOEListFragment : Fragment() {
       view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }*/
+    }
+    private fun onClickedCivilization(civilizations: civilizations) {
+        findNavController().navigate(R.id.Navigate_To_AOE_Civ_Detail)
     }
 }

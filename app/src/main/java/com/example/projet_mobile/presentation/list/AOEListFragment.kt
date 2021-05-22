@@ -67,12 +67,6 @@ class AOEListFragment : Fragment() {
             }
 
         })
-
-
-      /*  code pour naviguer entre les fragments
-      view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }*/
     }
     private fun onClickedCivilization(civilizations: civilizations) {
         findNavController().navigate(R.id.Navigate_To_AOE_Civ_Detail)

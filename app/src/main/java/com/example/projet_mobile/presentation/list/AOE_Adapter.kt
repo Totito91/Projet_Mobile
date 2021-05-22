@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projet_mobile.R
 
-class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civilizations) -> Unit)? = null) : RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
+class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((Int) -> Unit)? = null) : RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -18,8 +18,8 @@ class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civi
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.aoe_civ)
-            textView2 = view.findViewById(R.id.aoe_id)
+            textView = view.findViewById(R.id.aoe_id)
+            textView2 = view.findViewById(R.id.aoe_civ)
 
         }
     }
@@ -45,7 +45,7 @@ class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civi
         val civilizations = dataSet[position]
         viewHolder.textView.text = civilizations.id.toString()
         viewHolder.itemView.setOnClickListener{
-            listener?.invoke(civilizations)
+            listener?.invoke(position)
         }
         viewHolder.textView2.text = civilizations.name
     }

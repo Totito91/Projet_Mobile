@@ -7,22 +7,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projet_mobile.R
 
-class AOE_Adapter(private var dataSet: List<String>) :
-    RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
-
+class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civilizations) -> Unit)? = null) : RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
+        val textView2: TextView
 
         init {
             // Define click listener for the ViewHolder's View.
             textView = view.findViewById(R.id.aoe_civ)
+            textView2 = view.findViewById(R.id.aoe_id)
+
         }
     }
-    fun updateList(list : List<String>){
+    fun updateList(list : List<civilizations>){
         dataSet = list
         notifyDataSetChanged()
 
@@ -41,7 +42,12 @@ class AOE_Adapter(private var dataSet: List<String>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = dataSet[position]
+        val civilizations = dataSet[position]
+        viewHolder.textView.text = civilizations.id.toString()
+        viewHolder.itemView.setOnClickListener{
+            listener?.invoke(civilizations)
+        }
+        viewHolder.textView2.text = civilizations.name
     }
 
     // Return the size of your dataset (invoked by the layout manager)

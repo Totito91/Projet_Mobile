@@ -10,16 +10,19 @@
         android:name="com.example.projet_mobile.presentation.list.AOEListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_aoe_list">
-
+        <argument
+            android:name="AOE_Id"
+            app:argType="integer"
+            android:defaultValue="-1" />
         <action
             android:id="@+id/Navigate_To_AOE_Civ_Detail"
             app:destination="@id/AOE_Civ_Detail" />
     </fragment>
     <fragment
         android:id="@+id/AOE_Civ_Detail"
-        android:name="com.example.projet_mobile.SecondFragment"
+        android:name="com.example.projet_mobile.presentation.detail.AOEDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_aoe_detail">
 
         <action
             android:id="@+id/Navigate_To_AOEListFirstFragment"

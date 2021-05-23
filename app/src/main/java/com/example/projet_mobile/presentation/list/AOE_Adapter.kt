@@ -3,23 +3,37 @@ package com.example.projet_mobile.presentation.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projet_mobile.R
 
-class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civilizations) -> Unit)? = null) : RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+
+class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((Int) -> Unit)? = null) : RecyclerView.Adapter<AOE_Adapter.ViewHolder>() {
+    val imgArray = arrayOf(R.drawable.image1,
+        R.drawable.image2,
+        R.drawable.image3,
+        R.drawable.image4,
+        R.drawable.image5,
+        R.drawable.image6,
+        R.drawable.image7,
+        R.drawable.image8,
+        R.drawable.image9,
+        R.drawable.image10,
+        R.drawable.image11,
+        R.drawable.image12,
+        R.drawable.image13
+    )
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
-        val textView2: TextView
+        val imageView: ImageView
+
 
         init {
             // Define click listener for the ViewHolder's View.
             textView = view.findViewById(R.id.aoe_civ)
-            textView2 = view.findViewById(R.id.aoe_id)
+            imageView = view.findViewById(R.id.image_civ)
 
         }
     }
@@ -43,11 +57,15 @@ class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((civi
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         val civilizations = dataSet[position]
-        viewHolder.textView.text = civilizations.id.toString()
+        viewHolder.imageView.setImageResource(imgArray[position])
+
+
+
+        viewHolder.textView.text = civilizations.name
         viewHolder.itemView.setOnClickListener{
-            listener?.invoke(civilizations)
+            listener?.invoke(position)
         }
-        viewHolder.textView2.text = civilizations.name
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -22,7 +22,26 @@ class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((Int)
         R.drawable.image10,
         R.drawable.image11,
         R.drawable.image12,
-        R.drawable.image13
+        R.drawable.image13,
+        R.drawable.image14,
+        R.drawable.image15,
+        R.drawable.image16,
+        R.drawable.image17,
+        R.drawable.image18,
+        R.drawable.image19,
+        R.drawable.image20,
+        R.drawable.image21,
+        R.drawable.image22,
+        R.drawable.image23,
+        R.drawable.image24,
+        R.drawable.image25,
+        R.drawable.image26,
+        R.drawable.image27,
+        R.drawable.image28,
+        R.drawable.image29,
+        R.drawable.image30,
+        R.drawable.image31,
+        R.drawable.image32
     )
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -58,9 +77,6 @@ class AOE_Adapter(private var dataSet: List<civilizations>, var listener: ((Int)
         // contents of the view with that element
         val civilizations = dataSet[position]
         viewHolder.imageView.setImageResource(imgArray[position])
-
-
-
         viewHolder.textView.text = civilizations.name
         viewHolder.itemView.setOnClickListener{
             listener?.invoke(position)

@@ -19,7 +19,8 @@ Ces données sont récupérés de l'API [Age of Empire](https://github.com/aalis
 * Lecture des images en local
 
 # Screenshots
-Lorsque l'on lance l'application, elle va effectuer un appel serveur vers l'api Age of Empire et récupérer les civilisations puis va stockés les données dans le cache de l'application.
+Lorsque l'on lance l'application, elle va effectuer un appel serveur vers l'api Age of Empire et récupérer les civilisations,  
+puis va stockés les données dans le cache de l'application.
 ![](https://github.com/Totito91/Projet_Mobile/blob/master/app/ScreenShots/capture1.PNG)
 
 L'utilisateur peut appuyer sur l'image ou le nom de la civilisation et arrivera sur l'écran de détail de cette civilisation 

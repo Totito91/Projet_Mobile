@@ -20,10 +20,16 @@ Ces données sont récupérés de l'API [Age of Empire](https://github.com/aalis
 
 # Screenshots
 Lorsque l'on lance l'application, elle va effectuer un appel serveur vers l'api Age of Empire et récupérer les civilisations,  
-puis va stockés les données dans le cache de l'application.
+puis va stockées les données dans le cache de l'application.
 
 ![](https://github.com/Totito91/Projet_Mobile/blob/master/app/ScreenShots/capture1.PNG)
 
-L'utilisateur peut appuyer sur l'image ou le nom de la civilisation, il arrivera donc sur l'écran de détail de cette civilisation 
+L'utilisateur peut appuyer sur l'image ou le nom de la civilisation, il arrivera donc sur l'écran de détail de cette civilisation. Il peut aussi appuyer
+sur le bouton *Menu* pour revenir à la liste des civilisations.
+
 
 ![](https://github.com/Totito91/Projet_Mobile/blob/master/app/ScreenShots/capture2.PNG)
+
+Comme on peut le voir en haut le mode avion est activé donc les données sont bien stockées en cache.
+
+![](https://github.com/Totito91/Projet_Mobile/blob/master/app/ScreenShots/capture3.PNG)

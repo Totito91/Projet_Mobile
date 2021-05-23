@@ -1,6 +1,7 @@
 package com.example.projet_mobile.presentation.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,13 +42,16 @@ class AOEListFragment : Fragment() {
 
         Singletons.aoeApi.getAOElist().enqueue(object : Callback<AOEListResponse> {
             override fun onFailure(call: Call<AOEListResponse>, t: Throwable) {
-               // TODO("Not yet implemented")
+            //System.out.println(t.message)
             }
 
             override fun onResponse(call: Call<AOEListResponse>, response: Response<AOEListResponse>) {
                 if(response.isSuccessful && response.body() != null){
                     val aoeResponse = response.body()!!
                     adapter.updateList(aoeResponse.civilizations)
+                }
+                if (response.code() == 404) {
+                    Log.v("Error code 404", response.errorBody()!!.string());
                 }
             }
 

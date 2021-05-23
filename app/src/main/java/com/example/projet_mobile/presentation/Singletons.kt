@@ -10,8 +10,8 @@ import java.io.File
 
 class Singletons{
     companion object{
-        var cache = Cache(File(context?.cacheDir,"response"), 10 * 1024 *1024)
-        val okHttpClient : OkHttpClient = OkHttpClient().newBuilder()
+        var cache = Cache(File(context?.cacheDir,"responses"), 10 * 1024 *1024)
+        private val okHttpClient : OkHttpClient = OkHttpClient().newBuilder()
                 .cache(cache)
                 .build()
         val aoeApi: AOEApi = Retrofit.Builder()

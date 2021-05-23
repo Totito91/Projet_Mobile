@@ -1,6 +1,6 @@
 # Projet_Mobile
 
-_Application Age Of Empire 2_
+### _Application Age Of Empire 2_
 
 
 C'est une application développé dans le cadre du projet mobile de 3A.
@@ -17,3 +17,6 @@ Ces données sont récupérés de l'API [Age of Empire](https://github.com/aalis
 * Gitflow
 * Singletons
 * Lecture des images en local
+
+# Screenshots
+

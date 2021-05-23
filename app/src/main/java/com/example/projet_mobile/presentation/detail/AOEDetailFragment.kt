@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.projet_mobile.R
 import com.example.projet_mobile.presentation.Singletons
 import com.example.projet_mobile.presentation.api.AOEDetailResponse
-import com.example.projet_mobile.presentation.api.AOEListResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,17 +37,20 @@ class AOEDetailFragment : Fragment() {
     }
 
     private fun callApi() {
-        Singletons.aoeApi.getAOEdetail("1").enqueue(object :Callback<AOEDetailResponse>{
-            override fun onResponse(call: Call<AOEDetailResponse>, response: Response<AOEDetailResponse>) {
-                if(response.isSuccessful && response.body() != null){
-                    textViewName.text = response.body()!!.id.toString()
+        val id: Int? = arguments?.getInt("AOE_Id")?: -1
+        if (id != null) {
+            Singletons.aoeApi.getAOEdetail(id+1).enqueue(object :Callback<AOEDetailResponse>{
+                override fun onResponse(call: Call<AOEDetailResponse>, response: Response<AOEDetailResponse>) {
+                    if(response.isSuccessful && response.body() != null){
+                        textViewName.text = response.body()!!.id.toString()
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<AOEDetailResponse>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
+                override fun onFailure(call: Call<AOEDetailResponse>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
 
-        })
+            })
+        }
     }
 }

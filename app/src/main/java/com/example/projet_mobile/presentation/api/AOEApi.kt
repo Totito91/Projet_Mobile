@@ -10,5 +10,5 @@ interface AOEApi {
     fun getAOElist(): Call<AOEListResponse>
 
     @GET("civilization/{id}")
-    fun getAOEdetail(@Path("id") id: String): Call<AOEDetailResponse>
+    fun getAOEdetail(@Path("id") id: Int?): Call<AOEDetailResponse>
 }

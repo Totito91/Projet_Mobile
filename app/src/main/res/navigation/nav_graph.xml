@@ -23,10 +23,7 @@
         android:name="com.example.projet_mobile.presentation.detail.AOEDetailFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_aoe_detail">
-        <argument
-            android:name="AOE_Id"
-            app:argType="integer"
-            android:defaultValue="-1" />
+
         <action
             android:id="@+id/Navigate_To_AOEListFirstFragment"
             app:destination="@id/AOEListFirstFragment" />

@@ -8,4 +8,4 @@ Elle met en place un RecyclerView pour afficher une liste de civilisations tiré
 Ces données sont récupérés de l'API [Age of Empire](https://github.com/aalises/age-of-empires-II-api) et sont stockés en cache via le cache HTTP.
 
 
-#titre Elements obligatoire et bonus #titre
+# Elements obligatoire et bonus
